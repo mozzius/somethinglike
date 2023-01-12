@@ -46,9 +46,10 @@ const Home: NextPage = () => {
               Ask the AI
             </button>
           </div>
-          {recommend.error && <p>Sorry, an error occured</p>}
           {loading ? (
             <Spinner />
+          ) : recommend.error ? (
+            <p className="text-white">Sorry, an error occured</p>
           ) : (
             response && (
               <div className="w-full space-y-4">
